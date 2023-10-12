@@ -36,6 +36,14 @@ gpg --armor --export YOUR-KEY-ID
 ```
 
 ### Add GPG key to Github account
+1. Copy your GPG key, beginning with -----BEGIN PGP PUBLIC KEY BLOCK----- and ending with -----END PGP PUBLIC KEY BLOCK-----.
+2. In the upper-right corner of github page, click your profile photo, then click Settings.
+3. In the user settings sidebar, click SSH and GPG keys.
+4. Click New GPG key.
+5. In the "Key" field, paste your GPG key.
+6. Click Add GPG key.
+7. Type your GitHub password to verify that it's you.
+8. Click Confirm.
 
 ### Configure Git on windows 
 ```
