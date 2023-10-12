@@ -1,28 +1,43 @@
 # Github verify sign commits
 
-Signed commits are marked as verified ✔ on GitHub so other people can be confident that changes are coming from a trusted source 🚀
+## description
+This is a guide to verify signed commits on Github.
 
-## Download and install GPG for windows 
+## What is GPG?
+GPG, or GNU Privacy Guard, is a public key cryptography implementation. This allows for the secure transmission of information between parties and can be used to verify that the origin of a message is genuine.
+
+## Why sign commits?
+Signing commits enables other people to verify that commits come from a trusted source and haven't been altered after they were signed. Git uses GPG keys to sign commits and tags.
+
+## How to sign commits?
+You can sign commits and tags using GPG keys.
+
+## How to verify signed commits?
+You can verify signed commits and tags using GPG keys.
+
+## Steps
+
+### Download and install GPG for windows 
 https://www.gpg4win.org/
 
-## Create GPG Key
+### Create GPG Key
 ```
 gpg --full-generate-key
 ```
 
-## List GPG Key with key IDs
+### List GPG Key with key IDs
 ```
 gpg --list-secret-keys --keyid-format LONG
 ```
 
-## Export your public key
+### Export your public key
 ```
 gpg --armor --export YOUR-KEY-ID 
 ```
 
-## Add GPG key to Github account
+### Add GPG key to Github account
 
-## Configure Git on windows 
+### Configure Git on windows 
 ```
 git config --global user.name "YOUR-NAME"
 git config --global user.email "YOUR-EMAIL"
@@ -32,32 +47,35 @@ git config --global tag.gpgsign true
 git config --global gpg.program "C:\Program Files (x86)\GnuPG\bin\gpg.exe"
 ```
 
-## List global git config 
+### List global git config 
 ```
 git config --global --list
 ```
 
-## Create a signed commit
+### Create a signed commit
 ```
 git commit -S -m "YOUR-COMMIT-MESSAGE"
 ```
 
-## Create a signed tag
+### Create a signed tag
 ```
 git tag -s v1.0 -m "YOUR-TAG-MESSAGE"
 ```
 
-## Push signed commits and tags
+### Push signed commits and tags
 ```
 git push origin master --tags
 ```
 
-## Verify signed commits and tags
+### Verify signed commits and tags
 ```
 git log --show-signature
 ```
 
-## Verify signed commits and tags on Github
+### Verify signed commits and tags on Github
+```
+git log --show-signature --oneline
+```
 
 ## References
 https://help.github.com/en/github/authenticating-to-github/managing-commit-signature-verification
